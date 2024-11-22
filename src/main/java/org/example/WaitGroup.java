@@ -12,7 +12,7 @@ public class WaitGroup {
             notifyAll();
         }
     }
-    
+
     public synchronized void await() throws InterruptedException {
         while (countWorkers > 0) {
             wait();

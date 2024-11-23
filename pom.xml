@@ -11,7 +11,7 @@
     </repositories>
 
     <groupId>org.example</groupId>
-    <artifactId>HW3</artifactId>
+    <artifactId>ThreadPool</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

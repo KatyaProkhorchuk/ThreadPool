@@ -14,7 +14,7 @@ public class Promise<T> {
         notifyAll();
     }
 
-    public T getValue() {
+    public synchronized T getValue() {
         return value.get();
     }
 

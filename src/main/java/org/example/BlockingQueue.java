@@ -35,7 +35,7 @@ public class BlockingQueue<T> {
                 return  Optional.of(data.remove(0));
             }
             return Optional.empty();
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             return Optional.empty();
         }
     }

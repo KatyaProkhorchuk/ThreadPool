@@ -84,7 +84,8 @@
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
                     </systemPropertyVariables>
-                    <forkCount>0</forkCount>
+
+<!--                    <forkCount>0</forkCount>-->
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -108,6 +109,7 @@
                             <destFile>${project.build.directory}/jacoco.exec</destFile> <!-- Путь к файлу с данными покрытия -->
                             <append>true</append>
                         </configuration>
+
                     </execution>
                     <execution>
                         <id>post-unit-test</id>

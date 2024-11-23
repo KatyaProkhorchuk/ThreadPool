@@ -24,7 +24,7 @@
         <aspectj.version>2.22.2</aspectj.version>
         <allure.version>2.32.0</allure.version>
         <sonar.coverage.jacoco.xmlReportPaths>
-            ${project.basedir}/report-aggregate/target/site/
+            ${project.basedir}/target/site/
             jacoco-aggregate/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
     </properties>
@@ -49,17 +49,17 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.32</version> <!-- Убедитесь, что используете актуальную версию -->
+            <version>1.7.32</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.6</version> <!-- Используйте актуальную версию Logback -->
+            <version>1.2.6</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.2.6</version> <!-- Используйте актуальную версию Logback -->
+            <version>1.2.6</version>
         </dependency>
     </dependencies>
 <build>
@@ -104,9 +104,10 @@
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
-<!--                        <configuration>-->
-<!--                            <destFile>${project.build.directory}/jacoco.exec</destFile> &lt;!&ndash; Путь к файлу с данными покрытия &ndash;&gt;-->
-<!--                        </configuration>-->
+                        <configuration>
+                            <destFile>${project.build.directory}/jacoco.exec</destFile> <!-- Путь к файлу с данными покрытия -->
+                            <append>true</append>
+                        </configuration>
                     </execution>
                     <execution>
                         <id>post-unit-test</id>
@@ -114,9 +115,9 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
-<!--                        <configuration>-->
-<!--                            <dataFile>${project.build.directory}/jacoco.exec</dataFile>-->
-<!--                        </configuration>-->
+                        <configuration>
+                            <dataFile>${project.build.directory}/jacoco.exec</dataFile>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
